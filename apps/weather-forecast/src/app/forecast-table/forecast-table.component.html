@@ -1,0 +1,27 @@
+<div *ngIf="forecastToDisplay?.length">
+	<ng-container
+		[ngTemplateOutlet]="forecast"
+		[ngTemplateOutletContext]="{ forecast: forecastToDisplay }"
+	></ng-container>
+</div>
+
+<ng-template #forecast let-forecasts="forecast">
+	<table>
+		<thead>
+			<tr>
+				<th>City Name</th>
+				<th *ngFor="let temperatureMeasure of forecasts[0]?.temperatureMeasures">
+					{{ temperatureMeasure?.timestamp }}
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let cityForecast of forecasts">
+				<td>{{ cityForecast?.city }}</td>
+				<td *ngFor="let temperatureMeasure of cityForecast?.temperatureMeasures">
+					{{ temperatureMeasure?.temperature }}
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</ng-template>

@@ -1,0 +1,7 @@
+<bp-forecast-search [default]="forecastSearch" (search)="updateUrl($event)"></bp-forecast-search>
+<div *ngIf="errorVisible" class="error">
+	<span>Weather forecast is not found for {{ forecastSearch?.search }}</span>
+</div>
+<div class="margin-top-24">
+	<bp-forecast-table [mode]="forecastSearch?.mode"></bp-forecast-table>
+</div>

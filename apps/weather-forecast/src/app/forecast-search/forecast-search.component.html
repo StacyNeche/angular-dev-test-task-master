@@ -1,0 +1,15 @@
+<div>
+	<form #weatherForm="ngForm">
+		<input id="search" name="search" placeholder="Type to search..." [(ngModel)]="forecastSearch.search" />
+		<div class="radio-button-container">
+			<div>
+				<input type="radio" id="daily" name="mode" value="DAILY" [(ngModel)]="forecastSearch.mode" />
+				<label for="daily">Daily</label>
+			</div>
+			<div>
+				<input type="radio" id="hourly" name="mode" value="HOURLY" [(ngModel)]="forecastSearch.mode" />
+				<label for="hourly">Hourly</label>
+			</div>
+		</div>
+	</form>
+</div>
